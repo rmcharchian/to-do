@@ -38,23 +38,10 @@ function displayTasks(tasksArray) {
         var task = tasksArray[i];
         //var $taskTR = $('<tr></tr>');
         //$taskTR.data('id', task.id);
-        $('#taskContainer').prepend($taskTR);
+        $('#taskContainer').prepend(
+            '<div class = "tasks">' + task.task + '</div>'
+        );
         
     }
 }
 
-// function displayTasks(tasksArray) {
-//   $('#taskContainer').empty();
-
-//   for (var i = 0; i < tasksArray.length; i++) {
-//     var task = tasksArray[i];
-//     var $taskTR = $('<tr></tr>');
-//     $taskTR.data('id', task.id);
-//     $taskTR.append('<td class="name">' + task.task + '</td>');
-//     //$koalaTR.append(' <button class="deleteButton">Delete Koala</button>')
-//     // if (koala.ready_for_transfer === false) {
-//     //   $koalaTR.append(' <button class="readyButton">Ready for Transfer</button>');
-//     };
-//     //$koalaTR.append('<td class="name">' + koala.name + '</td>');
-//     $('#taskContainer').prepend($taskTR);
-//   }
