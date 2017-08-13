@@ -4,7 +4,7 @@ $(document).ready(function(){
     console.log('jQuery has been loaded');
     $('#newTaskButton').on('click', function (){
         console.log('newTaskButton has been clicked');
-        var taskInput = $('#taskInput').val();
+        var taskInput = $('#task').val();
         var inputObject = {
             task: taskInput
         };
@@ -30,13 +30,13 @@ function getTasks () {
     })
 }
 
-function drawTasks(tasksArray) {
-    $('tasksContainer').empty();
+function displayTasks(tasksArray) {
+    $('#tasksContainer').empty();
     for (var i = 0; i < tasksArray.length; i++) {
-        var task = taskArray[i];
-        var $taskDiv = $('<div></div>');
-        $taskDiv.data('id', task.id);
-        $('#taskContainer').prepend($taskDiv);
+        var task = tasksArray[i];
+        var $taskTR = $('<tr></tr>');
+        $taskTR.data('id', task.id);
+        $('#taskContainer').prepend($taskTR);
         
     }
 }

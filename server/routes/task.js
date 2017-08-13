@@ -6,7 +6,7 @@ router.get('/', function(req, res) {
     console.log('task was hit');
     pool.connect(function(errorConnectingToDatabase, client, done){
         if(errorConnectingToDatabase) {
-            console.log(('Error connecting to database', errorConnectingToDatabase));
+            console.log('Error connecting to database', errorConnectingToDatabase);
             res.sendStatus(500);
         } else {
             client.query('SELECT * FROM tasks;', function(errorMakingQuery, result) {
@@ -41,13 +41,9 @@ router.post('/', function(req, res){
                 }
             });
         }
+        console.log(req.body.task);
     });
 });
-
-
-
-
-
 
 
 module.exports = router;
