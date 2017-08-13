@@ -6,3 +6,13 @@ $(document).ready(function(){
         console.log('newTaskButton has been clicked');
     })
 });
+
+function getTasks () {
+    $.ajax({
+        method: 'GET',
+        url: '/task',
+        success: function(response){
+            console.log(response);
+        }
+    })
+}
