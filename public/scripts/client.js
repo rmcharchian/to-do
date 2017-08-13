@@ -2,6 +2,7 @@ console.log('client.js has been loaded');
 
 $(document).ready(function(){
     console.log('jQuery has been loaded');
+    getTasks();
     $('#newTaskButton').on('click', function (){
         console.log('newTaskButton has been clicked');
         var taskInput = $('#task').val();
@@ -26,17 +27,34 @@ function getTasks () {
         url: '/task',
         success: function(response){
             console.log(response);
+            displayTasks(response);
         }
     })
 }
 
 function displayTasks(tasksArray) {
-    $('#tasksContainer').empty();
+    $('#taskContainer').empty();
     for (var i = 0; i < tasksArray.length; i++) {
         var task = tasksArray[i];
-        var $taskTR = $('<tr></tr>');
-        $taskTR.data('id', task.id);
+        //var $taskTR = $('<tr></tr>');
+        //$taskTR.data('id', task.id);
         $('#taskContainer').prepend($taskTR);
         
     }
 }
+
+// function displayTasks(tasksArray) {
+//   $('#taskContainer').empty();
+
+//   for (var i = 0; i < tasksArray.length; i++) {
+//     var task = tasksArray[i];
+//     var $taskTR = $('<tr></tr>');
+//     $taskTR.data('id', task.id);
+//     $taskTR.append('<td class="name">' + task.task + '</td>');
+//     //$koalaTR.append(' <button class="deleteButton">Delete Koala</button>')
+//     // if (koala.ready_for_transfer === false) {
+//     //   $koalaTR.append(' <button class="readyButton">Ready for Transfer</button>');
+//     };
+//     //$koalaTR.append('<td class="name">' + koala.name + '</td>');
+//     $('#taskContainer').prepend($taskTR);
+//   }
