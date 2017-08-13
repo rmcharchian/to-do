@@ -36,8 +36,6 @@ function displayTasks(tasksArray) {
     $('#taskContainer').empty();
     for (var i = 0; i < tasksArray.length; i++) {
         var task = tasksArray[i];
-        //var $taskTR = $('<tr></tr>');
-        //$taskTR.data('id', task.id);
         $('#taskContainer').prepend(
             '<div class = "tasks">' + task.task + '</div>'
         );
