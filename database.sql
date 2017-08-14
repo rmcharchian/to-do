@@ -1,6 +1,6 @@
 CREATE TABLE tasks (
     id serial PRIMARY KEY,
-    task VARCHAR(200) NOT NULL
+    task VARCHAR(200) NOT NULL,
     );
     
 SELECT * FROM tasks;    

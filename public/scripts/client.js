@@ -36,6 +36,13 @@ function displayTasks(tasksArray) {
     $('#taskContainer').empty();
     for (var i = 0; i < tasksArray.length; i++) {
         var task = tasksArray[i];
+        var $taskDiv = $('<div></div>');
+        $taskDiv.data('id', task.id);
+        $taskDiv.append('div class="complete">' + task.complete + '</div>');
+        var $taskDivInput = $('input class="">');
+        $taskDivInput.val(task.complete);
+        $taskDiv.append($taskDivInput);
+
         $('#taskContainer').prepend(
             '<div class = "tasks">' + task.task + '</div>'
         );
